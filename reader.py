@@ -4,7 +4,7 @@ import japanize_matplotlib
 import numpy as np
 
 def graf(title,data_a,data_b):
-    log_increase_rates_a = [np.log(data_a[i] / data_a[i-1]) if i != 0 else 0 for i in range(len(data_a))]
+    log_increase_rates_a = [np.log(data_a[i] / data_a[i-1]) if i != 0 else 0 for i in range(len(data_a))] #対数増加率に変換
     log_increase_rates_b = [np.log(data_b[i] / data_b[i-1]) if i != 0 else 0 for i in range(len(data_b))]
     plt.plot(log_increase_rates_a, label='ポジティブ値の変化')
     plt.plot(log_increase_rates_b, label='ネガティブ値の変化')
